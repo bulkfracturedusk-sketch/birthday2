@@ -1,149 +1,180 @@
-/* ================= RESET ================= */
+/* ================= GLOBAL CONFIGURATION RESET ================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ================= BODY BACKGROUND ================= */
+/* ================= PERFORMANCE CANVASES ================= */
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ================= BACKGROUND STARDUST GLITTER INTERACTION ================= */
 body {
   font-family: 'Poppins', sans-serif;
   background:
-    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.8) 1.5px, transparent 3px),
-    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.6) 1px, transparent 3px),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.5) 1px, transparent 3px),
-    linear-gradient(135deg, #1b1f5a, #05010a);
-  background-size: 120px 120px, 160px 160px, 200px 200px, cover;
-  animation: glitter 8s linear infinite;
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.75) 1.5px, transparent 3px),
+    radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.6) 1px, transparent 3px),
+    radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.5) 1px, transparent 3px),
+    linear-gradient(135deg, #121640, #030107);
+  background-size: 140px 140px, 180px 180px, 240px 240px, cover;
+  animation: backgroundGlitter 12s linear infinite;
   color: #e6ecff;
   overflow-x: hidden;
 }
 
-/* ================= GLITTER ANIMATION ================= */
-@keyframes glitter {
-  from {
-    background-position: 0 0, 50px 100px, 100px 200px, center;
-  }
-  to {
-    background-position: 120px 120px, 210px 260px, 300px 420px, center;
-  }
+@keyframes backgroundGlitter {
+  from { background-position: 0 0, 60px 120px, 120px 240px, center; }
+  to { background-position: 140px 140px, 240px 300px, 360px 480px, center; }
 }
 
-/* ================= CONTENT ================= */
 #content {
   text-align: center;
 }
 
-/* ================= SECTIONS ================= */
 section {
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-/* ================= HERO GLASS CARD ================= */
+/* ================= HERO STRUCTURAL CONTAINER CARD ================= */
 .hero {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 50px 25px;
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 60px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px);
-  border-radius: 30px;
-  box-shadow: 0 0 45px rgba(150,180,255,0.35);
+  /* Premium Frosted Glassmorphism Formula */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 36px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 105, 180, 0.2);
 }
 
-/* ================= HEADINGS ================= */
+/* ================= TYPOGRAPHY HEADER STYLING ================= */
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.2rem;
-  margin-bottom: 10px;
+  font-size: 4rem;
+  margin-bottom: 12px;
   color: #ffffff;
-  text-shadow: 0 0 15px rgba(200,220,255,0.7);
+  text-shadow: 0 0 15px rgba(255, 64, 129, 0.8), 0 0 35px rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
+}
+
+/* Blinking text typing caret cursor addition */
+h1::after {
+  content: '|';
+  animation: cursorBlink 0.8s steps(2, start) infinite;
+}
+
+@keyframes cursorBlink {
+  to { opacity: 0; }
 }
 
 h2 {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 15px;
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(200,220,255,0.6);
+  text-shadow: 0 0 12px rgba(255, 182, 193, 0.9);
 }
 
 p {
-  font-size: 1.1rem;
-  color: #e6ecff;
+  font-size: 1.15rem;
+  color: #f2f5ff;
+  line-height: 1.65;
 }
 
-/* ================= EMOJI ================= */
 .emoji {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
 }
 
-/* ================= BUTTON ================= */
+/* ================= NEON TRANSITION TRIGGER BUTTONS ================= */
 button {
-  margin-top: 20px;
-  padding: 14px 32px;
+  margin-top: 25px;
+  padding: 16px 42px;
   font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   border-radius: 50px;
   border: none;
   background: linear-gradient(135deg, #ff4081, #ff1744);
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 22px rgba(255,105,180,0.8);
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 25px rgba(255, 23, 68, 0.65);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   user-select: none;
+  z-index: 9999;
 }
 
 button:hover {
-  transform: scale(1.08);
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 0 40px rgba(255, 23, 68, 0.95);
 }
 
-/* ================= CAKE ================= */
+/* ================= 3D VIEWPORT CANVAS LAYER ================= */
 #cakeCanvas {
   width: 100%;
   height: 420px;
-  margin-top: 20px;
-
-  /* ✅ THIS CONTROLS CAKE SIZE */
-  transform: scale(0.55);
+  margin: 15px auto 0 auto; /* Added 'auto' to both sides to enforce center alignment */
+  display: flex;             /* Helps container focus internal contents */
+  justify-content: center;   /* Forces the 3D canvas rendering center track */
+  align-items: center;
+  transform: scale(0.72);
   transform-origin: center;
-
-  filter: drop-shadow(0 0 30px rgba(255,180,220,1));
+  filter: drop-shadow(0 0 40px rgba(255, 105, 180, 0.75));
 }
-
-/* 🔥 IMPORTANT: allow button clicks */
-#cakeCanvas canvas {
-  pointer-events: none;
-}
-
-
-/* ================= TEXT SECTIONS ================= */
+/* ================= HIDDEN GLASSMORPHISM EXPANSION CARDS ================= */
 .message,
 .best-wishes,
 .surprise {
   display: none;
-  margin-top: 25px;
-  padding: 22px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 20px;
-  color: #f2f6ff;
-  box-shadow: 0 0 30px rgba(180,210,255,0.35);
-  animation: fadeUp 1.2s ease forwards;
-}
-
-.best-wishes {
+  margin-top: 30px;
+  padding: 30px;
   max-width: 600px;
+  width: 100%;
+  
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25), 0 0 35px rgba(255, 105, 180, 0.15);
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15);
 }
 
-/* ================= GIFT ================= */
+/* Class called safely inside layout workflows by JS engine timers */
+.reveal-active {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* ================= SURPRISE GIFT COMPONENT ================= */
 .gift-container {
   display: none;
-  margin-top: 40px;
+  margin-top: 45px;
   cursor: pointer;
+}
+
+.gift-container p {
+  margin-top: 18px;
+  font-weight: 500;
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
 .gift-box {
@@ -151,132 +182,152 @@ button:hover {
   height: 120px;
   position: relative;
   margin: auto;
+  transition: transform 0.4s ease;
+}
+
+.gift-container:hover .gift-box {
+  transform: scale(1.08) rotate(3deg);
 }
 
 .box {
   width: 120px;
   height: 120px;
   background: linear-gradient(#ff1744, #ff4081);
-  border-radius: 18px;
-  box-shadow: 0 12px 25px rgba(255,64,129,0.4);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(255,64,129,0.45);
 }
 
 .lid {
   position: absolute;
-  top: -38px;
+  top: -36px;
   width: 120px;
-  height: 38px;
+  height: 36px;
   background: linear-gradient(#ff80ab, #ff4081);
-  border-radius: 18px;
+  border-radius: 20px;
   transform-origin: bottom;
-  transition: transform 1s ease;
+  transition: transform 1.2s cubic-bezier(0.68, -0.6, 0.27, 1.6);
 }
 
 .gift-box.open .lid {
-  transform: rotateX(120deg);
+  transform: rotateX(140deg) translateY(-12px);
+  opacity: 0.8;
 }
 
-/* ================= GALLERY ================= */
+/* ================= POLAROID PHOTO GALLERY MATRIX ================= */
 #gallerySection {
   display: none;
-  animation: fadeUp 1.5s ease forwards;
+  margin-top: 30px;
 }
+
+#gallerySection h1 {
+  margin-bottom: 40px;
+  animation: cursorBlink 0s forwards; /* Removes pointer effect from gallery headers */
+}
+#gallerySection h1::after { content: ''; }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  width: 85%;
   margin: auto;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 14px;
+  border-radius: 4px;
+  border-bottom: 38px solid #ffffff; /* Frame bottom geometry spacing */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  transform: rotate(-2.5deg);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25), box-shadow 0.4s ease;
   cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
+
+.gallery img:nth-child(even) { transform: rotate(3.5deg); }
+.gallery img:nth-child(37n+3) { transform: rotate(-1deg); }
 
 .gallery img:hover {
-  transform: scale(1.07);
-  box-shadow:
-    0 0 15px rgba(255,192,203,0.8),
-    0 0 30px rgba(255,255,255,0.8);
+  transform: scale(1.06) rotate(0deg) translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.55), 0 0 30px rgba(255, 105, 180, 0.5);
 }
 
-/* ================= FLOATING HEARTS & EMOJIS ================= */
+/* ================= BACKGROUND CELEBRATION FLOATS ================= */
 .heart {
   position: fixed;
-  bottom: -30px;
+  bottom: -50px;
   font-size: 1.8rem;
-  animation: floatHeart 4s linear forwards;
+  animation: engineFloat 4.5s linear forwards;
   z-index: 30;
+  pointer-events: none;
+  text-shadow: 0 0 12px rgba(255,255,255,0.4);
 }
 
-@keyframes floatHeart {
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
+@keyframes engineFloat {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-50vh) translateX(35px) rotate(180deg); }
+  100% { transform: translateY(-115vh) translateX(-15px) rotate(360deg); opacity: 0; }
 }
 
-/* ================= LIGHTBOX ================= */
+/* ================= LIGHTBOX VIEWPORTS ================= */
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
-  z-index: 50;
+  background: rgba(4, 3, 12, 0.96);
+  backdrop-filter: blur(10px);
+  z-index: 99999;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 .lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(255,255,255,0.8);
+  max-width: 85%;
+  max-height: 75%;
+  border: 10px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(255, 105, 180, 0.5), 0 0 30px rgba(255,255,255,0.3);
+  transition: opacity 0.2s ease-in-out;
 }
 
 .lightbox .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: white;
+  top: 25px;
+  right: 35px;
+  font-size: 3.2rem;
+  color: #ffffff;
   cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+.lightbox .close:hover {
+  transform: scale(1.1) rotate(90deg);
+  color: #ff4081;
 }
 
 .controls {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .controls button {
-  font-size: 1.5rem;
-  margin: 0 15px;
-  padding: 10px 20px;
+  font-size: 1.4rem;
+  margin: 0 25px;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.4);
 }
 
-/* ================= FOOTER ================= */
+/* ================= LAYOUT FOOTER ================= */
 .footer {
-  margin-top: 60px;
-  padding: 20px;
+  margin-top: 100px;
+  padding: 40px 20px;
   font-size: 0.95rem;
   color: #ffd1e8;
-  text-shadow: 0 0 8px rgba(255,192,203,0.6);
-}
-
-/* ================= COMMON ANIMATION ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  text-shadow: 0 0 8px rgba(255,192,203,0.5);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
