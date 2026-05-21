@@ -1,107 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy Birthday 🎉</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-
-<!-- MAIN CSS -->
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Happy Birthday Vishakha 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- MAIN STYLE SHEET -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= LIGHTBOX ================= -->
-<div id="lightbox" class="lightbox">
-  <span class="close" onclick="closeLightbox()">×</span>
-  <img id="lightboxImg" alt="memory">
-  <div class="controls">
-    <button onclick="prevSlide()">❮</button>
-    <button onclick="nextSlide()">❯</button>
+  <!-- FULLSCREEN CANVAS FOR HIGH-PERFORMANCE PHYSICAL CONFETTI ACCELERATION -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ================= LIGHTBOX GALLERY VIEWPORT ================= -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img id="lightboxImg" alt="Memory Frame">
+    <div class="controls">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
   </div>
-</div>
 
-<!-- ================= MAIN CONTENT ================= -->
-<div id="content">
+  <!-- ================= MAIN WEB CONTAINER ================= -->
+  <div id="content">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <h1 id="title"></h1>
-    <p class="emoji">🎂</p>
+    <!-- ================= HERO PRESENTATION CARD ================= -->
+    <section class="hero">
+      <h1 id="title"></h1>
+      <p class="emoji">🎂</p>
 
-    <!-- 3D CAKE -->
-    <div id="cakeCanvas"></div>
+      <!-- THREE.JS 3D CAKE SIMULATION PLATFORM -->
+      <div id="cakeCanvas"></div>
 
-    <button onclick="cutCake()">Cut the Cake 🎉</button>
+      <button id="actionBtn" onclick="cutCake()">Cut the Cake 🎉</button>
 
-    <!-- MESSAGE -->
-    <div class="message" id="msg">
-      💖 May your life glow brighter every year ✨  
-      <br> Happiest Birthday 🎂🥳
-    </div>
-
-    <!-- BEST WISHES -->
-    <div class="best-wishes" id="bestWishes">
-      <h2>💐 Best Wishes 💐</h2>
-      <p>
-        May your dreams turn into achievements,<br>
-        your smile never fade,<br>
-        and happiness always stay with you ✨  
-        <br><br>
-        Shine brighter every year 💖
-      </p>
-    </div>
-
-    <!-- GIFT -->
-    <div class="gift-container" onclick="openGift()">
-      <div class="gift-box">
-        <div class="lid"></div>
-        <div class="box"></div>
+      <!-- HIDDEN SURPRISE WRAPPERS (ACTIVATED BY JS) -->
+      <div class="message" id="msg">
+        💖 May your life glow brighter every single year ✨  
+        <br><strong>Happiest Birthday MyLove!</strong>
       </div>
-      <p>Tap the Gift 🎁</p>
-    </div>
 
-    <!-- SURPRISE -->
-    <div class="surprise" id="surprise">
-      💝 You are truly one of a kind 💝
-    </div>
+      <div class="best-wishes" id="bestWishes">
+        <h2>💐 Best Wishes 💐</h2>
+        <p>
+          Happy Birthday🥳🎂from afar! Distance only proves how much our bond grows🥹,  Miss you endlessly🫂✨  
+          <br><br>
+          Shine brighter every year, my dear! 💖
+        </p>
+      </div>
 
-    <!-- MUSIC -->
-    <audio id="song">
-      <source src="birthday.mp3" type="audio/mpeg">
-      Your browser does not support audio.
-    </audio>
-  </section>
+      <!-- DYNAMIC INTERACTIVE GIFT PANEL -->
+      <div class="gift-container" id="giftContainer" onclick="openGift()">
+        <div class="gift-box">
+          <div class="lid"></div>
+          <div class="box"></div>
+        </div>
+        <p>Tap the Gift 🎁</p>
+      </div>
 
-  <!-- ================= GALLERY ================= -->
-  <section class="gallery-section" id="gallerySection">
-    <h1>Beautiful Moments 📸</h1>
-    <div class="gallery">
-      <img src="p1.jpeg" alt="Memory 1">
-      <img src="p2.jpeg" alt="Memory 2">
-      <img src="p3.jpeg" alt="Memory 3">
-      
-    </div>
-  </section>
+      <div class="surprise" id="surprise">
+        💝 You are truly one of a kind, a gem! 💝
+      </div>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    © 2026 Birthday Celebration Webpage  
-    <br>
-    Made with Love 💖✨ for special moments!
-  </footer>
+      <!-- BACKGROUND CELEBRATION MUSIC AUDIO HOOK -->
+      <audio id="song" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+    </section>
 
-</div>
+    <!-- ================= MEMORY PHOTO GALLERY ================= -->
+    <section class="gallery-section" id="gallerySection">
+      <h1>Beautiful Moments 📸</h1>
+      <div class="gallery">
+        <img src="p1.jpeg" alt="Memory 1">
+        <img src="p3.jpeg" alt="Memory 2">
+        <img src="p2.jpeg" alt="Memory 3">
+      </div>
+    </section>
 
-<!-- THREE.JS -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+    <!-- ================= WEB FOOTER ================= -->
+    <footer class="footer">
+      © 2026 Birthday Celebration Webpage  
+      <br>
+      Made with Love 💖✨ for special moments!
+    </footer>
 
-<!-- MAIN SCRIPT -->
-<script src="script.js"></script>
+  </div>
+
+  <!-- THREE.JS CORE FRAMEWORK PACK -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+  
+  <!-- CORE CONTROLLER APPLICATION ENGINE -->
+  <script src="script.js"></script>
 
 </body>
 </html>
-
