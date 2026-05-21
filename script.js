@@ -1,5 +1,5 @@
 /* ================= CONFIGURATION & TYPING EFFECT ================= */
-const birthdayGirl = "Vishuu (fuggi)!.. ❤️";
+const birthdayGirl = "Vishuu (Fuggi)!.. ❤️";
 const fullTitleText = `Happy Birthday ${birthdayGirl}`;
 const titleElement = document.getElementById("title");
 let charIndex = 0;
